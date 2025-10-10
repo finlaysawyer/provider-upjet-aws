@@ -141,7 +141,7 @@ type BucketReplicationConfigurationRuleFilterParameters struct {
 
 	// Object key name prefix identifying one or more objects to which the rule applies. Must be less than or equal to 1024 characters in length. Defaults to an empty string ("") if filter is not specified.
 	// +kubebuilder:validation:Optional
-	Prefix *string `json:"prefix,omitempty" tf:"prefix,omitempty"`
+	Prefix *string `json:"prefix" tf:"prefix"`
 
 	// Configuration block for specifying a tag key and value. See below.
 	// +kubebuilder:validation:Optional
@@ -224,7 +224,7 @@ type BucketReplicationConfigurationRuleParameters struct {
 
 	// Filter that identifies subset of objects to which the replication rule applies. See below. If not specified, the rule will default to using prefix.
 	// +kubebuilder:validation:Optional
-	Filter *BucketReplicationConfigurationRuleFilterParameters `json:"filter,omitempty" tf:"filter,omitempty"`
+	Filter *BucketReplicationConfigurationRuleFilterParameters `json:"filter" tf:"filter"`
 
 	// Unique identifier for the rule. Must be less than or equal to 255 characters in length.
 	// +kubebuilder:validation:Optional
